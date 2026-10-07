@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anurex Solar — By Anura Hardware | Solar Installation in Warakapola & Gampaha</title>
+<meta name="description" content="Anurex Solar — independent solar installer in Warakapola & Gampaha, Sri Lanka since 2019. Hybrid & off-grid systems, professional installation and custom EV charging solutions.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%230B2540'/%3E%3Cpath d='M9 27a13 13 0 0 1 26 0Z' fill='%23FFC648'/%3E%3Cg stroke='%23FFC648' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M22 8.5V3.5'/%3E%3Cpath d='M31.5 12.5 35 9'/%3E%3Cpath d='M12.5 12.5 9 9'/%3E%3C/g%3E%3Cg stroke='%231FA55C' stroke-width='2.8' stroke-linecap='round'%3E%3Cpath d='M6 32.5h32'/%3E%3Cpath d='M11 38h22'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS & RESET ============ */
+:root{
+  --bg:#FFFFFF; --bg-soft:#F5F8F7;
+  --navy:#0B2540; --ink:#0B2540; --muted:#4A6076; --faint:#7C90A3;
+  --green:#1FA55C; --green-deep:#0E7A42; --green-tint:#E9F6EF;
+  --yellow:#FFC648; --yellow-deep:#E5A93C; --yellow-tint:#FFF4D8;
+  --line:rgba(11,37,64,.10); --line-2:rgba(11,37,64,.22);
+  --glass:rgba(255,255,255,.66); --glass-strong:rgba(255,255,255,.9);
+  --shadow:0 24px 55px -30px rgba(11,37,64,.35);
+  --err:#C64B3E;
+  --radius:20px;
+  --font-d:"Fraunces",Georgia,serif; --font-b:"Space Grotesk","Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:var(--font-b);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+/* Fine dot-grid — gives every frosted panel something real to blur */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(rgba(11,37,64,.055) 1px,transparent 1.4px);background-size:26px 26px}
+.topbar,.navbar,main,.footer{position:relative;z-index:1}
+::selection{background:var(--yellow);color:var(--navy)}
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-track{background:#EFF3F5}
+::-webkit-scrollbar-thumb{background:#C3D0DA;border:3px solid #EFF3F5;border-radius:99px}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:4px}
+img,svg{display:inline-block;vertical-align:middle}
+a{text-decoration:none;color:inherit}
+ul,ol{list-style:none}
+button{font:inherit;color:inherit}
+.container{width:min(1180px,100% - 48px);margin-inline:auto}
+@media(max-width:600px){.container{width:calc(100% - 40px)}}
+
+/* ============ SHARED PIECES ============ */
+section{padding:110px 0}
+.kicker{display:inline-flex;align-items:center;gap:12px;font:600 12px/1 var(--font-b);letter-spacing:.24em;text-transform:uppercase;color:var(--green-deep)}
+.kicker::before{content:"";width:28px;height:2px;background:var(--yellow);border-radius:2px}
+.sec-head{max-width:660px;margin-bottom:56px}
+.sec-head h2{font:600 clamp(1.9rem,3.6vw,2.85rem)/1.14 var(--font-d);letter-spacing:-.01em;margin-top:18px}
+.sec-head h2 em{font-style:italic;font-weight:500;color:var(--green-deep)}
+.sec-head .lead{color:var(--muted);font-size:16.5px;margin-top:16px;max-width:56ch}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head.center .kicker::after{content:"";width:28px;height:2px;background:var(--yellow);border-radius:2px}
+.sec-head.center .lead{margin-inline:auto}
+.mini-label{font:600 11px var(--font-b);letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 15px var(--font-b);
+  padding:15px 27px;border-radius:13px;border:1px solid transparent;cursor:pointer;white-space:nowrap;
+  transition:transform .25s,box-shadow .25s,background .25s,border-color .25s}
+.btn svg{transition:transform .3s}
+.btn:hover svg{transform:translateX(4px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-primary{background:var(--green-deep);color:#fff}
+.btn-primary:hover{background:#0B6B3A;transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(14,122,66,.55)}
+.btn-ghost{background:rgba(255,255,255,.72);border-color:var(--line-2);color:var(--ink);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.btn-ghost:hover{border-color:rgba(11,37,64,.5);transform:translateY(-2px)}
+.btn-sm{padding:10px 18px;font-size:13.5px;border-radius:10px}
+.btn-block{width:100%}
+
+/* Soft color washes (what the glass frosts) */
+.wash{position:absolute;border-radius:50%;pointer-events:none}
+.wash-green{background:radial-gradient(circle,rgba(31,165,92,.15),transparent 68%)}
+.wash-yellow{background:radial-gradient(circle,rgba(255,198,72,.22),transparent 68%)}
+
+/* ============ TOPBAR (dark blue detail) ============ */
+.topbar{background:var(--navy);color:rgba(255,255,255,.85);font-size:12.5px}
+.topbar-in{display:flex;justify-content:space-between;align-items:center;padding:9px 0;gap:16px}
+.tb-item{display:inline-flex;align-items:center;gap:7px}
+.tb-item svg{color:#5FCE8F}
+.tb-phone{color:var(--yellow);font-weight:600}
+.tb-phone:hover{color:#FFDD7A}
+@media(max-width:760px){.topbar{display:none}}
+
+/* ============ NAVBAR ============ */
+.navbar{position:sticky;top:0;z-index:100;border-bottom:1px solid transparent;transition:background .35s,border-color .35s,backdrop-filter .35s}
+.navbar.scrolled,body.nav-open .navbar{background:rgba(255,255,255,.78);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border-bottom-color:var(--line)}
+.nav-inner{display:flex;align-items:center;gap:30px;height:76px}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+.brand-mark{width:40px;height:40px;flex:none;filter:drop-shadow(0 6px 14px rgba(11,37,64,.28))}
+.brand-text strong{display:block;font:700 17px/1.1 var(--font-b);color:var(--navy)}
+.brand-text strong span{color:var(--green-deep)}
+.brand-text small{display:block;font:600 8.5px var(--font-b);letter-spacing:.3em;text-transform:uppercase;color:var(--faint);margin-top:2px}
+.nav-links{display:flex;gap:30px}
+.nav-links a{position:relative;color:var(--muted);font:500 14.5px var(--font-b);padding:6px 2px;transition:color .25s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--yellow);border-radius:2px;transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--navy)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-toggle{display:none;width:44px;height:44px;border:1px solid var(--line-2);border-radius:12px;background:rgba(255,255,255,.7);cursor:pointer;position:relative;flex:none}
+.nav-toggle span{position:absolute;left:11px;right:11px;height:2px;background:var(--navy);border-radius:2px;transition:.35s}
+.nav-toggle span:nth-child(1){top:15px}.nav-toggle span:nth-child(2){top:21px}.nav-toggle span:nth-child(3){top:27px}
+body.nav-open .nav-toggle span:nth-child(1){top:21px;rotate:45deg}
+body.nav-open .nav-toggle span:nth-child(2){opacity:0}
+body.nav-open .nav-toggle span:nth-child(3){top:21px;rotate:-45deg}
+.mobile-menu{position:absolute;top:100%;left:0;right:0;display:grid;grid-template-rows:0fr;opacity:0;pointer-events:none;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--line);transition:grid-template-rows .5s cubic-bezier(.3,.7,.2,1),opacity .35s}
+body.nav-open .mobile-menu{grid-template-rows:1fr;opacity:1;pointer-events:auto}
+.mm-clip{overflow:hidden;min-height:0}
+.mm-inner{padding:8px 26px 26px}
+.mm-inner nav a{display:block;padding:15px 2px;border-bottom:1px solid var(--line);font:500 16px var(--font-b);color:var(--ink)}
+.mm-inner nav a:hover{color:var(--green-deep)}
+.mm-actions{display:flex;align-items:center;gap:18px;margin-top:20px;flex-wrap:wrap}
+.mm-call{display:inline-flex;align-items:center;gap:8px;color:var(--green-deep);font:600 15px var(--font-b)}
+@media(max-width:880px){.nav-links,.nav-cta{display:none}.nav-toggle{display:block}}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:72px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:48px;align-items:center}
+.hero-copy h1{font:600 clamp(2.4rem,5.2vw,4.15rem)/1.08 var(--font-d);letter-spacing:-.015em;margin:24px 0 26px;color:var(--navy)}
+.hl{position:relative;z-index:0;font-style:italic;font-weight:500;color:var(--green-deep);white-space:nowrap}
+.hl svg{position:absolute;left:-4%;bottom:-.1em;width:108%;height:.42em;z-index:-1;transform:rotate(-.6deg)}
+.hl svg path{fill:none;stroke:var(--yellow);stroke-width:11;stroke-linecap:round;opacity:.9}
+.hero-sub{color:var(--muted);font-size:17px;max-width:54ch;margin-bottom:36px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-stats{display:flex;flex-wrap:wrap;margin-top:46px;border-top:1px solid var(--line);padding-top:24px}
+.hstat{padding-right:28px;margin-right:28px;border-right:1px solid var(--line)}
+.hstat:last-child{border-right:0;margin-right:0;padding-right:0}
+.hstat b{display:block;font:600 1.65rem/1.1 var(--font-d);color:var(--navy)}
+.hstat span{font:600 11px var(--font-b);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+/* — the orbit scene — */
+.hero-visual{position:relative}
+.scene{position:relative;width:100%;max-width:540px;aspect-ratio:1;margin-inline:auto;will-change:transform}
+.scene .wash-green{width:64%;height:64%;top:-6%;right:-4%}
+.scene .wash-yellow{width:56%;height:56%;bottom:-8%;left:-4%}
+.orbits{width:100%;height:100%;display:block;position:relative}
+.spin-a,.spin-b{transform-box:view-box;transform-origin:50% 50%}
+.spin-a{animation:spin 90s linear infinite}
+.spin-b{animation:spin 60s linear infinite reverse}
+.chips{position:absolute;inset:0;pointer-events:none;will-change:transform}
+.chip{position:absolute;z-index:3;pointer-events:auto;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 16px 36px -22px rgba(11,37,64,.4);animation:floaty 5.4s ease-in-out infinite alternate}
+.chip small{display:block;font:600 9.5px/1 var(--font-b);letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}
+.chip strong{font:600 14px var(--font-b);color:var(--navy);white-space:nowrap}
+.chip-icon{width:36px;height:36px;flex:none;display:grid;place-items:center;border-radius:11px;background:var(--green-tint);color:var(--green-deep)}
+.chip-b .chip-icon{background:var(--yellow-tint);color:var(--yellow-deep)}
+.chip-a{top:6%;left:-6%;animation-delay:.3s}
+.chip-b{top:42%;right:-8%;animation-delay:1.2s}
+.chip-c{bottom:2%;left:4%;animation-delay:2s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floaty{from{translate:0 0}to{translate:0 -9px}}
+@media(max-width:1000px){
+  .hero{padding:48px 0 72px}
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{display:flex;flex-direction:column;align-items:center;gap:22px}
+  .scene{max-width:390px}
+  .chips{position:static;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;pointer-events:auto}
+  .chip{position:static;animation:none}
+  .chip strong{white-space:normal}
+}
+@media(max-width:640px){
+  .hero-stats{display:grid;grid-template-columns:repeat(2,auto);gap:16px 28px;justify-content:start}
+  .hstat{border-right:0;margin:0;padding:0}
+}
+
+/* ============ BRANDS MARQUEE ============ */
+.brands{border-block:1px solid var(--line);background:var(--bg-soft);padding:20px 0;overflow:hidden}
+.brands-track{display:flex;width:max-content;animation:scrollx 32s linear infinite}
+.brands:hover .brands-track{animation-play-state:paused}
+.brands-group{display:flex;align-items:center;flex:none}
+.brands-group span{display:flex;align-items:center;font:600 14px var(--font-b);letter-spacing:.24em;text-transform:uppercase;color:var(--muted);white-space:nowrap;transition:color .3s}
+.brands-group span:hover{color:var(--green-deep)}
+.brands-group span::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--yellow);margin:0 32px;flex:none}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+
+/* ============ ABOUT ============ */
+.about{position:relative;overflow:clip}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+.about-copy p{color:var(--muted);font-size:16px;max-width:58ch}
+.about-copy p + p{margin-top:18px}
+.about-copy p strong{color:var(--ink);font-weight:600}
+.branch-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:10px 17px;border-radius:999px;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  font:600 13px var(--font-b);color:var(--navy);transition:transform .3s,border-color .3s}
+.pill:hover{transform:translateY(-2px);border-color:rgba(14,122,66,.4)}
+.pill svg{color:var(--green-deep)}
+.pill-main svg{color:var(--yellow-deep)}
+.pill-main em{font-style:normal;background:var(--yellow);color:var(--navy);font-size:9.5px;font-weight:700;letter-spacing:.12em;padding:3px 7px;border-radius:99px;margin-left:2px}
+.ghost-year{position:absolute;right:-12px;bottom:-38px;pointer-events:none;user-select:none;
+  font:600 clamp(120px,18vw,210px)/1 var(--font-d);color:transparent;-webkit-text-stroke:1.5px rgba(11,37,64,.07)}
+.about-right{position:relative;z-index:1;padding-top:26px}
+.seal{position:absolute;top:-92px;right:-14px;width:150px;height:150px}
+.seal-rot{transform-box:view-box;transform-origin:50% 50%;animation:spin 30s linear infinite}
+.seal text{font:600 10.5px var(--font-b);letter-spacing:.2em;fill:var(--faint)}
+.principles{display:grid;gap:12px;padding:26px;border-radius:22px;background:var(--glass);border:1px solid var(--line);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow)}
+.principles li{display:flex;gap:18px;padding:16px 18px;border-radius:14px;border:1px solid transparent;transition:border-color .3s,transform .3s,background .3s}
+.principles li:hover{border-color:rgba(14,122,66,.3);background:rgba(255,255,255,.65);transform:translateX(6px)}
+.p-num{font:600 17px var(--font-d);font-style:italic;color:var(--green);flex:none;padding-top:1px}
+.principles h3{font:600 15.5px var(--font-b);margin-bottom:4px;color:var(--navy)}
+.principles p{color:var(--muted);font-size:13.5px;line-height:1.55}
+@media(max-width:920px){
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .ghost-year{display:none}
+  .about-right{padding-top:0}
+  .seal{position:static;display:block;margin:0 auto 14px;width:120px;height:120px}
+}
+
+/* ============ SERVICES ============ */
+.services{background:var(--bg-soft);border-block:1px solid var(--line);padding:120px 0;position:relative;overflow:clip}
+.service{display:grid;grid-template-columns:.92fr 1.08fr;gap:52px;align-items:center;padding:38px 42px;border-radius:24px;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow);
+  transition:transform .4s,border-color .4s,box-shadow .4s}
+.service + .service{margin-top:24px}
+.service:hover{transform:translateY(-5px);border-color:rgba(14,122,66,.38);box-shadow:0 34px 70px -34px rgba(11,37,64,.45)}
+.service.flip{grid-template-columns:1.08fr .92fr}
+.service.flip .svc-art{order:2}
+.svc-num{font:600 2.9rem/1 var(--font-d);font-style:italic;color:var(--green)}
+.svc-num::after{content:"";display:block;width:34px;height:4px;background:var(--yellow);border-radius:2px;margin-top:10px;transition:width .45s cubic-bezier(.3,.7,.2,1)}
+.service:hover .svc-num::after{width:64px}
+.svc-body h3{font:600 1.55rem/1.2 var(--font-d);letter-spacing:-.01em;margin:14px 0 4px;color:var(--navy)}
+.svc-tagline{font:italic 500 1.05rem var(--font-d);color:var(--green-deep);margin-bottom:12px}
+.svc-desc{color:var(--muted);font-size:14.5px;line-height:1.65;max-width:58ch}
+.svc-points{display:grid;gap:9px;margin:16px 0 18px}
+.svc-points li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink)}
+.svc-points svg{color:var(--green-deep);flex:none;margin-top:3px}
+.svc-chips{display:flex;flex-wrap:wrap;gap:8px}
+.svc-chips span{font:600 11.5px var(--font-b);letter-spacing:.05em;padding:7px 13px;border-radius:999px;
+  background:var(--green-tint);border:1px solid rgba(31,165,92,.28);color:var(--green-deep)}
+.svc-link{display:inline-flex;align-items:center;gap:8px;color:var(--green-deep);font:600 14px var(--font-b);margin-top:18px}
+.svc-link svg{transition:transform .3s}
+.svc-link:hover svg{transform:translateX(4px)}
+.svc-link:hover{text-decoration:underline;text-underline-offset:4px}
+.svc-art svg{width:100%;max-width:380px;height:auto;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.service:hover .svc-art svg{transform:scale(1.035)}
+/* line-art animation */
+.flow{stroke-dasharray:4 7;animation:dashmove 1.15s linear infinite}
+.service:hover .flow{animation-duration:.5s}
+.rays{transform-box:fill-box;transform-origin:center;animation:spin 38s linear infinite}
+.service:hover .rays{animation-duration:12s}
+.bubble{animation:bubbleSlide 3.4s ease-in-out infinite}
+.badge-pulse{transform-box:fill-box;transform-origin:center;animation:pop 2.2s ease-in-out infinite}
+@keyframes dashmove{to{stroke-dashoffset:-11}}
+@keyframes bubbleSlide{0%,100%{transform:translateX(-3.5px)}50%{transform:translateX(3.5px)}}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+@media(max-width:920px){
+  .service,.service.flip{grid-template-columns:1fr;gap:26px;padding:28px 24px}
+  .service .svc-art,.service.flip .svc-art{order:-1}
+  .svc-art svg{max-width:300px;margin-inline:auto}
+}
+
+/* ============ PROCESS ============ */
+.steps-wrap{position:relative}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;position:relative;z-index:1}
+.steps::before{content:"";position:absolute;top:23px;left:9%;right:9%;height:1px;border-top:1px dashed var(--line-2)}
+.flowline{position:absolute;top:23px;left:9%;right:9%;height:1px;z-index:0;
+  background-image:repeating-linear-gradient(90deg,rgba(31,165,92,.6) 0 8px,transparent 8px 22px);
+  animation:flowX 1s linear infinite}
+.step{text-align:center}
+.step-num{width:46px;height:46px;margin:0 auto 16px;display:grid;place-items:center;border-radius:50%;
+  background:#fff;border:1px solid var(--line-2);font:600 13px var(--font-b);color:var(--navy);
+  transition:border-color .3s,color .3s,transform .3s,box-shadow .3s}
+.step:hover .step-num{border-color:var(--green);color:var(--green-deep);transform:translateY(-4px);box-shadow:0 10px 22px -12px rgba(14,122,66,.5)}
+.step h3{font:600 15.5px var(--font-b);margin-bottom:6px;color:var(--navy)}
+.step p{color:var(--muted);font-size:13px;line-height:1.55}
+@keyframes flowX{to{background-position-x:22px}}
+@keyframes flowY{to{background-position-y:20px}}
+@media(max-width:820px){
+  .steps{grid-template-columns:1fr;gap:26px}
+  .steps::before{left:23px;right:auto;top:8px;bottom:8px;width:1px;height:auto;border-top:0;border-left:1px dashed var(--line-2)}
+  .flowline{left:23px;right:auto;top:8px;bottom:8px;width:1px;height:auto;
+    background-image:repeating-linear-gradient(180deg,rgba(31,165,92,.6) 0 7px,transparent 7px 20px);
+    animation:flowY 1s linear infinite}
+  .step{display:grid;grid-template-columns:46px 1fr;gap:16px;text-align:left}
+  .step-num{margin:0}
+}
+
+/* ============ CALCULATOR ============ */
+.calc-wrap{position:relative}
+.calc-wrap .wash-green{width:480px;height:480px;top:-190px;right:-140px}
+.calc-wrap .wash-yellow{width:420px;height:420px;bottom:-170px;left:-130px}
+.calc-anno{position:absolute;z-index:2;display:flex;align-items:center;gap:10px;
+  font:600 10px var(--font-b);letter-spacing:.2em;color:var(--faint);text-transform:uppercase}
+.calc-anno i{display:block;width:34px;height:1px;background:var(--line-2)}
+.anno-1{top:-13px;right:5%}
+.anno-2{bottom:-13px;left:4%}
+.calc{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:56px;padding:52px;border-radius:26px;
+  background:var(--glass-strong);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:var(--shadow)}
+.calc-left label{display:block;font:600 12px var(--font-b);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.bill-read strong{display:block;font:600 clamp(2.2rem,4vw,2.9rem)/1.05 var(--font-d);color:var(--navy);font-variant-numeric:tabular-nums}
+.bill-read .units{display:block;color:var(--green-deep);font-size:14px;margin:8px 0 26px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:99px;
+  background:linear-gradient(to right,var(--green) var(--p,21.4%),rgba(11,37,64,.14) var(--p,21.4%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+  background:var(--green-deep);border:4px solid #fff;margin-top:-8px;box-shadow:0 3px 10px rgba(11,37,64,.35);transition:transform .2s}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.14)}
+input[type=range]::-moz-range-track{height:8px;border-radius:99px;background:rgba(11,37,64,.14)}
+input[type=range]::-moz-range-progress{height:8px;border-radius:99px;background:var(--green)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--green-deep);border:4px solid #fff}
+.range-marks{display:flex;justify-content:space-between;margin-top:10px;font:500 11.5px var(--font-b);color:var(--faint);font-variant-numeric:tabular-nums}
+.res-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 2px;border-bottom:1px solid var(--line)}
+.res-row > span{color:var(--muted);font-size:14px}
+.res-row strong{font:600 1.45rem/1 var(--font-d);color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
+.res-row strong i{font:500 13px var(--font-b);font-style:normal;color:var(--muted);margin-left:5px}
+.res-hl strong{color:var(--green-deep)}
+.res-total{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:18px;padding:17px 19px;
+  border:1.5px dashed rgba(229,169,60,.65);border-radius:14px;background:var(--yellow-tint)}
+.res-total > span{color:var(--muted);font-size:13.5px}
+.res-total strong{font:600 1.6rem/1 var(--font-d);color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
+.calc-note{margin-top:20px;color:var(--faint);font-size:12.5px;line-height:1.6}
+.calc .btn{margin-top:20px}
+@media(max-width:1000px){
+  .calc{grid-template-columns:1fr;gap:40px;padding:34px 28px}
+  .calc-anno{display:none}
+}
+@media(max-width:560px){
+  .res-row strong{font-size:1.25rem}
+  .res-total strong{font-size:1.35rem}
+}
+
+/* ============ CONTACT ============ */
+.contact{background:var(--bg-soft);border-top:1px solid var(--line);position:relative;overflow:clip}
+.contact .wash-green{width:460px;height:460px;top:-180px;left:-160px}
+.contact-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:start}
+.c-rows{margin:34px 0 8px}
+.c-row{display:flex;align-items:center;gap:16px;padding:16px 4px;border-bottom:1px solid var(--line);transition:transform .3s}
+a.c-row:hover{transform:translateX(5px)}
+.c-ic{width:42px;height:42px;flex:none;display:grid;place-items:center;border-radius:12px;
+  background:var(--green-tint);border:1px solid rgba(31,165,92,.25);color:var(--green-deep)}
+.c-row small{display:block;font:600 10px/1 var(--font-b);letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:5px}
+.c-row strong{font:600 16.5px var(--font-b);color:var(--navy)}
+.c-phone .c-ic{background:var(--yellow-tint);border-color:rgba(229,169,60,.4);color:var(--yellow-deep)}
+.c-phone strong{font:600 clamp(1.5rem,2.4vw,1.85rem)/1.1 var(--font-d);color:var(--green-deep)}
+.c-arrow{margin-left:auto;color:var(--faint);transition:transform .3s,color .3s}
+a.c-row:hover .c-arrow{transform:translateX(4px);color:var(--green-deep)}
+.c-note{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;margin:24px 0;border-radius:16px;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  color:var(--muted);font-size:13.5px;line-height:1.6}
+.c-note svg{color:var(--green-deep);flex:none;margin-top:2px}
+.c-note strong{color:var(--ink)}
+.quote-form{padding:38px 36px;border-radius:24px;background:var(--glass-strong);border:1px solid var(--line);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:var(--shadow)}
+.quote-form h3{font:600 1.55rem var(--font-d);color:var(--navy);margin-bottom:6px}
+.form-sub{color:var(--muted);font-size:13.5px;margin-bottom:26px}
+.field{margin-bottom:16px}
+.field label{display:block;font:600 11.5px var(--font-b);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.field label small{text-transform:none;letter-spacing:0;color:var(--faint)}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--line-2);
+  background:rgba(255,255,255,.75);color:var(--ink);font:500 15px var(--font-b);transition:border-color .25s,box-shadow .25s}
+.field textarea{resize:vertical;min-height:84px}
+.field input::placeholder,.field textarea::placeholder{color:var(--faint)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(31,165,92,.16)}
+.field .err{display:none;font:500 12px var(--font-b);color:var(--err);margin-top:7px;font-style:normal}
+.field.invalid input{border-color:var(--err);box-shadow:0 0 0 3px rgba(198,75,62,.13)}
+.field.invalid .err{display:block}
+.select-wrap{position:relative}
+.select-wrap select{appearance:none;-webkit-appearance:none;padding-right:44px;cursor:pointer}
+.select-wrap svg{position:absolute;right:15px;top:50%;translate:0 -50%;pointer-events:none;color:var(--faint)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-note{margin-top:14px;color:var(--faint);font-size:12.5px;text-align:center}
+@media(max-width:960px){.contact-grid{grid-template-columns:1fr;gap:44px}}
+@media(max-width:560px){.frow{grid-template-columns:1fr}.quote-form{padding:30px 24px}}
+
+/* ============ FOOTER (dark blue) ============ */
+.footer{background:var(--navy);color:rgba(255,255,255,.92);padding-top:68px}
+.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .9fr 1fr;gap:46px;padding-bottom:56px}
+.f-brand .brand{margin-bottom:18px}
+.f-brand .brand-text strong{color:#fff}
+.f-brand .brand-text strong span{color:#5FCE8F}
+.f-brand .brand-text small{color:rgba(255,255,255,.5)}
+.f-brand p{color:rgba(255,255,255,.66);font-size:13.5px;max-width:34ch}
+.f-head{display:flex;align-items:center;gap:10px;font:600 11px var(--font-b);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:20px}
+.f-head::before{content:"";width:16px;height:2px;background:var(--yellow);border-radius:2px}
+.f-col a,.f-col span{display:block;color:rgba(255,255,255,.72);font-size:14px;padding:6px 0;transition:color .25s,transform .25s}
+.f-col a:hover{color:#fff;transform:translateX(4px)}
+.f-col strong{color:#fff;font-weight:600}
+.f-col .f-phone{color:var(--yellow);font:600 17px var(--font-b)}
+.f-col .f-phone:hover{color:#FFDD7A}
+.footer-bar{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:22px 0;border-top:1px solid rgba(255,255,255,.14);
+  color:rgba(255,255,255,.55);font-size:12.5px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.footer-grid{grid-template-columns:1fr}}
+
+/* ============ TOASTS ============ */
+.toast-wrap{position:fixed;bottom:24px;left:50%;translate:-50% 0;z-index:300;display:flex;flex-direction:column;gap:10px;width:min(430px,calc(100vw - 40px))}
+.toast{display:flex;align-items:center;gap:13px;padding:14px 18px;border-radius:14px;
+  background:rgba(255,255,255,.92);border:1px solid var(--line-2);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 20px 44px -16px rgba(11,37,64,.4);
+  transform:translateY(16px);opacity:0;transition:.45s cubic-bezier(.2,.9,.3,1.15)}
+.toast.show{transform:none;opacity:1}
+.toast-ic{width:28px;height:28px;flex:none;display:grid;place-items:center;border-radius:50%;background:var(--green-tint);color:var(--green-deep)}
+.toast.warn .toast-ic{background:var(--yellow-tint);color:var(--yellow-deep)}
+.toast p{font:500 14px var(--font-b);color:var(--ink)}
+
+/* ============ REVEAL & MOTION ============ */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.22,.61,.2,1),transform .8s cubic-bezier(.22,.61,.2,1);transition-delay:var(--d,0s)}
+[data-reveal].in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  [data-reveal]{opacity:1;transform:none}
+}
+</style>
+<noscript><style>[data-reveal]{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+<!-- ======= TOP BAR ======= -->
+<div class="topbar">
+  <div class="container topbar-in">
+    <span class="tb-item">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      Main Branch: Warakapola &nbsp;·&nbsp; Branch: Gampaha, Sri Lanka
+    </span>
+    <a class="tb-item tb-phone" href="tel:+94716118031">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      Call now — 071 611 8031
+    </a>
+  </div>
+</div>
+
+<!-- ======= NAVBAR ======= -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Anurex Solar — home">
+      <svg class="brand-mark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="#0B2540"/>
+        <path d="M9 27a13 13 0 0 1 26 0Z" fill="#FFC648"/>
+        <g stroke="#FFC648" stroke-width="2.6" stroke-linecap="round"><path d="M22 8.5V3.5"/><path d="M31.5 12.5 35 9"/><path d="M12.5 12.5 9 9"/></g>
+        <g stroke="#1FA55C" stroke-width="2.8" stroke-linecap="round"><path d="M6 32.5h32"/><path d="M11 38h22"/></g>
+      </svg>
+      <span class="brand-text"><strong>Anurex <span>Solar</span></strong><small>By Anura Hardware</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary btn-sm nav-cta">Free Quote</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mm-clip">
+      <div class="mm-inner">
+        <nav aria-label="Mobile">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#process">How it works</a>
+          <a href="#calculator">Calculator</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="mm-actions">
+          <a href="#contact" class="btn btn-primary btn-sm">Get a Free Quote</a>
+          <a class="mm-call" href="tel:+94716118031">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            071 611 8031
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ======= HERO ======= -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="kicker" data-reveal>By Anura Hardware · Est. 2019</p>
+      <h1 data-reveal style="--d:.1s">Powering Sri Lanka with
+        <em class="hl">solar&nbsp;energy<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 10C60 4 140 4 197 8"/></svg></em>
+        since 2019.
+      </h1>
+      <p class="hero-sub" data-reveal style="--d:.18s">An independent, locally owned installer with our main branch in Warakapola and a second branch in Gampaha. We design hybrid, off-grid and EV-ready systems around your roof, your usage and your budget — then install them properly, first time.</p>
+      <div class="hero-cta" data-reveal style="--d:.26s">
+        <a class="btn btn-primary" href="#contact">Get a Free Quote
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#services">Explore our services</a>
+      </div>
+      <div class="hero-stats" data-reveal style="--d:.32s">
+        <div class="hstat"><b>2019</b><span>Established</span></div>
+        <div class="hstat"><b>02</b><span>Branches</span></div>
+        <div class="hstat"><b>05</b><span>Trusted brands</span></div>
+        <div class="hstat"><b>100%</b><span>Custom design</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-reveal style="--d:.2s">
+      <div class="scene">
+        <div class="wash wash-green" aria-hidden="true"></div>
+        <div class="wash wash-yellow" aria-hidden="true"></div>
+        <svg class="orbits" viewBox="0 0 640 640" fill="none" aria-hidden="true">
+          <g class="spin-a"><circle cx="320" cy="320" r="290" stroke="rgba(11,37,64,.22)" stroke-dasharray="2 12"/></g>
+          <g class="spin-b"><circle cx="320" cy="320" r="216" stroke="rgba(11,37,64,.3)" stroke-dasharray="2 9"/></g>
+          <circle cx="320" cy="320" r="144" stroke="rgba(11,37,64,.14)"/>
+          <circle cx="320" cy="320" r="88" stroke="rgba(11,37,64,.18)" stroke-dasharray="3 8"/>
+          <circle cx="320" cy="320" r="68" fill="#FFC648"/>
+          <g stroke="#E5A93C" stroke-width="2.4" stroke-linecap="round">
+            <path d="M320 236v-14"/><path d="M391 265l10-10"/><path d="M404 320h14"/><path d="M391 375l10 10"/>
+            <path d="M320 404v14"/><path d="M249 375l-10 10"/><path d="M236 320h-14"/><path d="M249 265l-10-10"/>
+          </g>
+          <!-- home -->
+          <g class="sat">
+            <circle r="18" fill="rgba(255,255,255,.88)" stroke="rgba(11,37,64,.4)"/>
+            <path d="M-8 1 0-8l8 9M-5.5-1v7h11v-7" stroke="#0E7A42" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <animateMotion dur="26s" repeatCount="indefinite" path="M320 104A216 216 0 0 1 320 536A216 216 0 0 1 320 104"/>
+          </g>
+          <!-- solar panel -->
+          <g class="sat">
+            <circle r="18" fill="rgba(255,255,255,.88)" stroke="rgba(11,37,64,.4)"/>
+            <path d="M-9-4h18l-2.6 9.5h-12.8L-9-4ZM-4.6-4-6 5.5M0-4v9.5M4.6-4 6 5.5M-7.8 0h15.6" stroke="#0B2540" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <animateMotion dur="44s" repeatCount="indefinite" path="M320 30A290 290 0 0 1 320 610A290 290 0 0 1 320 30"/>
+          </g>
+          <!-- battery -->
+          <g class="sat">
+            <circle r="16" fill="rgba(255,255,255,.88)" stroke="rgba(11,37,64,.4)"/>
+            <rect x="-7" y="-5" width="13" height="10" rx="2" stroke="#0B2540" stroke-width="1.6"/>
+            <path d="M6-2h2v4H6" fill="#0B2540"/>
+            <rect x="-5" y="-3" width="4" height="6" fill="#1FA55C"/>
+            <animateMotion dur="18s" repeatCount="indefinite" path="M320 464A144 144 0 0 1 320 176A144 144 0 0 1 320 464"/>
+          </g>
+          <!-- energy bolt -->
+          <g class="sat">
+            <circle r="15" fill="rgba(255,255,255,.88)" stroke="rgba(11,37,64,.4)"/>
+            <path d="M2.5-9-5.5 2h4.3l-2 7L5.7-2H1.4l1.1-7Z" fill="#FFC648" stroke="#E5A93C" stroke-width=".8"/>
+            <animateMotion dur="60s" repeatCount="indefinite" path="M545 320A225 225 0 0 1 95 320A225 225 0 0 1 545 320"/>
+          </g>
+        </svg>
+      </div>
+      <div class="chips" aria-hidden="false">
+        <div class="chip chip-a">
+          <span class="chip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span><small>Established</small><strong>2019 — 5+ years in</strong></span>
+        </div>
+        <div class="chip chip-b">
+          <span class="chip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span><small>Our branches</small><strong>Warakapola · Gampaha</strong></span>
+        </div>
+        <div class="chip chip-c">
+          <span class="chip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg></span>
+          <span><small>Systems</small><strong>Hybrid · Off-grid · EV-ready</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= BRANDS MARQUEE ======= -->
+<div class="brands" aria-label="Component brands we install">
+  <div class="brands-track">
+    <div class="brands-group">
+      <span>Deye</span><span>Jinko</span><span>Growatt</span><span>Huawei</span><span>Solis</span>
+      <span>Deye</span><span>Jinko</span><span>Growatt</span><span>Huawei</span><span>Solis</span>
+    </div>
+    <div class="brands-group" aria-hidden="true">
+      <span>Deye</span><span>Jinko</span><span>Growatt</span><span>Huawei</span><span>Solis</span>
+      <span>Deye</span><span>Jinko</span><span>Growatt</span><span>Huawei</span><span>Solis</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======= ABOUT ======= -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy">
+        <p class="kicker" data-reveal>About us</p>
+        <div class="sec-head" data-reveal style="--d:.08s;margin-bottom:28px">
+          <h2>Independent by choice. <em>Obsessive</em> about quality.</h2>
+        </div>
+        <p data-reveal style="--d:.14s"><strong>Anurex Solar was established in 2019</strong>, growing out of our parent business, Anura Hardware. Our main branch sits in <strong>Warakapola</strong>, with a second branch in <strong>Gampaha</strong> — keeping us close to every roof we work on.</p>
+        <p data-reveal style="--d:.2s">Being an independent local business means no pre-packaged kits and no sales quotas. Every system starts from scratch: sized against your actual usage, roof orientation and budget, built from components we'd put on our own homes — then installed safely, neatly, and built to last.</p>
+        <p data-reveal style="--d:.26s">And when you call, you reach the owner — <strong>D. P. A. K. Pathirana</strong> — not a call centre. That's how it's been since day one, and it's why our customers recommend us to their neighbours.</p>
+        <div class="branch-pills" data-reveal style="--d:.3s">
+          <span class="pill pill-main">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Warakapola <em>MAIN</em>
+          </span>
+          <span class="pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Gampaha
+          </span>
+        </div>
+      </div>
+      <div class="about-right" data-reveal style="--d:.16s">
+        <svg class="seal" viewBox="0 0 170 170" aria-hidden="true">
+          <defs><path id="sealCirc" d="M85 23A62 62 0 0 1 85 147A62 62 0 0 1 85 23"/></defs>
+          <g class="seal-rot"><text><textPath href="#sealCirc">ANUREX SOLAR · SINCE 2019 · SRI LANKA ·</textPath></text></g>
+          <circle cx="85" cy="85" r="47" stroke="rgba(11,37,64,.25)" stroke-dasharray="2 6" fill="none"/>
+          <path d="M74 90a11 11 0 0 1 22 0Z" fill="#FFC648"/>
+          <g stroke="#E5A93C" stroke-width="2" stroke-linecap="round"><path d="M85 76v-5"/><path d="M93.5 79.5l3.5-3.5"/><path d="M76.5 79.5 73 76"/></g>
+          <g stroke="#1FA55C" stroke-width="2.4" stroke-linecap="round"><path d="M72 96h26"/><path d="M77 101.5h16"/></g>
+        </svg>
+        <ul class="principles">
+          <li><span class="p-num">01</span><div><h3>Custom-engineered</h3><p>Every system sized from your real energy usage — no cookie-cutter kits, ever.</p></div></li>
+          <li><span class="p-num">02</span><div><h3>Tier-one components</h3><p>Panels and inverters from Deye, Jinko, Growatt, Huawei and Solis — matched to the watt.</p></div></li>
+          <li><span class="p-num">03</span><div><h3>Installation done properly</h3><p>Roof-tailored mounting, watertight sealing and wiring we're proud to show off.</p></div></li>
+          <li><span class="p-num">04</span><div><h3>Local &amp; accountable</h3><p>Sold, installed and serviced by the same people — from Warakapola and Gampaha.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ghost-year" aria-hidden="true">2019</div>
+</section>
+
+<!-- ======= SERVICES ======= -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="sec-head center" data-reveal>
+      <p class="kicker">What we do</p>
+      <h2>Three crafts. <em>One team.</em></h2>
+      <p class="lead">Everything below is done by our own people — designed, supplied and installed under one roof. Hover a card to see it come alive.</p>
+    </div>
+
+    <!-- 01 · Hybrid & Off-Grid -->
+    <article class="service" data-reveal>
+      <div class="svc-art" aria-hidden="true">
+        <svg viewBox="0 0 260 180" fill="none">
+          <circle cx="34" cy="34" r="13" fill="#FFC648"/>
+          <g class="rays" stroke="#E5A93C" stroke-width="2.2" stroke-linecap="round">
+            <path d="M34 16v-8"/><path d="M46.7 21.3l5.7-5.7"/><path d="M52 34h8"/><path d="M46.7 46.7l5.7 5.7"/>
+            <path d="M34 52v8"/><path d="M21.3 46.7l-5.7 5.7"/><path d="M16 34H8"/><path d="M21.3 21.3l-5.7-5.7"/>
+          </g>
+          <path class="flow" d="M52 46C74 58 84 62 100 70" stroke="#1FA55C" stroke-width="1.8"/>
+          <path d="M92 80 136 52 194 64 152 94Z" stroke="#0B2540" stroke-width="2" stroke-linejoin="round"/>
+          <g stroke="rgba(11,37,64,.45)" stroke-width="1.4">
+            <path d="M155 56l-43 29"/><path d="M175 60l-43 29"/><path d="M114 66l59 13"/>
+          </g>
+          <g stroke="#0B2540" stroke-width="2" stroke-linecap="round">
+            <path d="M96 84l-4 32"/><path d="M148 92l4 24"/><path d="M84 116h76"/>
+          </g>
+          <path class="flow" d="M160 96c10 14 12 18 18 24" stroke="#1FA55C" stroke-width="1.8"/>
+          <rect x="176" y="118" width="36" height="28" rx="4" stroke="#0B2540" stroke-width="2" fill="#fff"/>
+          <path d="M182 126h18" stroke="rgba(11,37,64,.4)" stroke-width="1.6"/>
+          <text x="194" y="141" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="600" fill="#0B2540">INV</text>
+          <path class="flow" d="M212 132h18" stroke="#1FA55C" stroke-width="1.8"/>
+          <rect x="230" y="116" width="22" height="32" rx="4" stroke="#0B2540" stroke-width="2" fill="#fff"/>
+          <path d="M240 112v4" stroke="#0B2540" stroke-width="2"/>
+          <rect x="234" y="121" width="14" height="6" fill="#1FA55C" opacity=".4"/>
+          <rect x="234" y="130" width="14" height="6" fill="#1FA55C" opacity=".7"/>
+          <rect x="234" y="139" width="14" height="6" fill="#1FA55C"/>
+          <path class="flow" d="M176 146c-26 14-56 18-80 10" stroke="#1FA55C" stroke-width="1.8"/>
+          <g stroke="#0B2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M40 124l22-18 22 18"/><path d="M46 124v34"/><path d="M78 124v34"/><path d="M36 158h52"/><path d="M60 158v-18h8v18"/>
+          </g>
+          <path d="M20 158h224" stroke="rgba(11,37,64,.35)" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <span class="svc-num">01</span>
+        <h3>Hybrid &amp; Off-Grid Systems</h3>
+        <p class="svc-tagline">Blackout-proof power, sized to the watt.</p>
+        <p class="svc-desc">We perfectly match panel capacity with the right inverter from Deye, Jinko, Growatt, Huawei and Solis — never over-spent, never under-powered. Hybrid setups keep your batteries charged through the night; full off-grid systems make you completely independent.</p>
+        <ul class="svc-points">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 7"/></svg>Panel-to-inverter matching done to the watt</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 7"/></svg>Battery backup for nights &amp; outages</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 7"/></svg>Monitor everything from your phone</li>
+        </ul>
+        <div class="svc-chips"><span>Deye</span><span>Jinko</span><span>Growatt</span><span>Huawei</span><span>Solis</span></div>
+        <a class="svc-link" href="#contact">Get a quote for this
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- 02 · Professional Installation -->
+    <article class="service flip" data-reveal>
+      <div class="svc-art" aria-hidden="true">
+        <svg viewBox="0 0 260 180" fill="none">
+          <circle cx="36" cy="30" r="11" fill="#FFC648"/>
+          <g class="rays" stroke="#E5A93C" stroke-width="2" stroke-linecap="round">
+            <path d="M36 15V7"/><path d="M46.6 19.4l5.7-5.7"/><path d="M51 30h8"/><path d="M46.6 40.6l5.7 5.7"/>
+            <path d="M36 45v8"/><path d="M25.4 40.6l-5.7 5.7"/><path d="M21 30h-8"/><path d="M25.4 19.4l-5.7-5.7"/>
+          </g>
+          <path d="M18 96 128 36l110 60" stroke="#0B2540" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M148 54 204 82" stroke="#1FA55C" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="163" y="58" width="6" height="6" fill="#1FA55C"/>
+          <rect x="185" y="69" width="6" height="6" fill="#1FA55C"/>
+          <path d="M150 38 206 66 198 78 142 50Z" stroke="#0B2540" stroke-width="2" stroke-linejoin="round"/>
+          <g stroke="rgba(11,37,64,.45)" stroke-width="1.4">
+            <path d="M168.5 47.2 160.5 59.2"/><path d="M187 56.4 179 68.4"/><path d="M146 44l56 28"/>
+          </g>
+          <g stroke="#0B2540" stroke-width="2" stroke-linecap="round">
+            <path d="M44 96v56"/><path d="M212 96v56"/><path d="M24 152h212"/>
+          </g>
+          <path d="M120 152v-30h20v30" stroke="#0B2540" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M62 108h24v24H62z M74 108v24 M62 120h24" stroke="rgba(11,37,64,.5)" stroke-width="1.4"/>
+          <g transform="translate(206,14)">
+            <rect width="44" height="20" rx="4" stroke="#0B2540" stroke-width="1.8" fill="#fff"/>
+            <path d="M11 0v6 M22 0v8 M33 0v6" stroke="#0B2540" stroke-width="1.6"/>
+            <circle class="bubble" cx="22" cy="10" r="4.5" fill="#FFC648" stroke="#E5A93C"/>
+          </g>
+          <circle class="badge-pulse" cx="226" cy="128" r="15" fill="#E9F6EF" stroke="#1FA55C" stroke-width="2"/>
+          <path d="M219 128l5 5 9-10" stroke="#0E7A42" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <span class="svc-num">02</span>
+        <h3>Professional Installation</h3>
+        <p class="svc-tagline">Safe, tidy and built to outlast your roof.</p>
+        <p class="svc-desc">A system is only as good as its mounting. Our team tailors every installation to your roof — the right rails, the right sealing, the right wiring routes — so it stays safe, watertight and trouble-free for decades.</p>
+        <ul class="svc-points">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 7"/></svg>Mounting tailored to your roof type</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 7"/></svg>Certified-grade wiring &amp; safety practices</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 7"/></svg>Fully tested &amp; commissioned before handover</li>
+        </ul>
+        <div class="svc-chips"><span>Roof-tailored mounting</span><span>Watertight sealing</span><span>Neat wiring</span><span>Load-safe rails</span></div>
+        <a class="svc-link" href="#contact">Get a quote for this
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- 03 · EV Charging -->
+    <article class="service" data-reveal>
+      <div class="svc-art" aria-hidden="true">
+        <svg viewBox="0 0 260 180" fill="none">
+          <circle cx="228" cy="30" r="11" fill="#FFC648"/>
+          <g class="rays" stroke="#E5A93C" stroke-width="2" stroke-linecap="round">
+            <path d="M228 15V7"/><path d="M238.6 19.4l5.7-5.7"/><path d="M243 30h8"/><path d="M238.6 40.6l5.7 5.7"/>
+            <path d="M228 45v8"/><path d="M217.4 40.6l-5.7 5.7"/><path d="M213 30h-8"/><path d="M217.4 19.4l-5.7-5.7"/>
+          </g>
+          <path d="M22 58 66 32l38 20-44 26Z" stroke="#0B2540" stroke-width="2" stroke-linejoin="round"/>
+          <g stroke="rgba(11,37,64,.45)" stroke-width="1.4">
+            <path d="M36.5 49.4 74.5 69.4"/><path d="M51 40.8 89 60.8"/><path d="M41 68l44-26"/>
+          </g>
+          <g stroke="#0B2540" stroke-width="2" stroke-linecap="round">
+            <path d="M40 74l-4 22"/><path d="M62 82l4 22"/><path d="M30 96h44"/>
+          </g>
+          <path class="flow" d="M92 60c12 6 16 10 22 16" stroke="#1FA55C" stroke-width="1.8"/>
+          <path class="flow" d="M84 72c14 12 20 20 26 28" stroke="#1FA55C" stroke-width="1.8"/>
+          <path d="M108 72h-5v29h5" stroke="rgba(11,37,64,.45)" stroke-width="1.5" fill="none"/>
+          <rect x="112" y="72" width="38" height="26" rx="4" stroke="#0B2540" stroke-width="2" fill="#fff"/>
+          <circle cx="142" cy="79" r="2.5" fill="#1FA55C"/>
+          <text x="128" y="93" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="8.5" font-weight="600" fill="#7C90A3">INV 1</text>
+          <rect x="112" y="104" width="38" height="26" rx="4" stroke="#0B2540" stroke-width="2" fill="#fff"/>
+          <circle cx="142" cy="111" r="2.5" fill="#1FA55C"/>
+          <text x="128" y="125" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="8.5" font-weight="600" fill="#7C90A3">INV 2</text>
+          <path class="flow" d="M150 85c10 7 14 11 18 15" stroke="#1FA55C" stroke-width="1.8"/>
+          <path class="flow" d="M150 117c10-7 14-11 18-15" stroke="#1FA55C" stroke-width="1.8"/>
+          <rect x="166" y="94" width="10" height="14" rx="2" stroke="#0B2540" stroke-width="1.8" fill="#fff"/>
+          <path d="M169 94v-4 M173 94v-4" stroke="#0B2540" stroke-width="1.6" stroke-linecap="round"/>
+          <path class="flow" d="M176 101c6 3 8 7 10 12" stroke="#1FA55C" stroke-width="1.8"/>
+          <path d="M168 136v-5c0-6 4-11 10-11h11l9-15h28l9 15h10c6 0 10 5 10 11v5" stroke="#0B2540" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M168 136h8m20 0h28m20 0h9" stroke="#0B2540" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="186" cy="136" r="10" stroke="#0B2540" stroke-width="2" fill="#fff"/>
+          <circle cx="186" cy="136" r="3.5" fill="#0B2540"/>
+          <circle cx="234" cy="136" r="10" stroke="#0B2540" stroke-width="2" fill="#fff"/>
+          <circle cx="234" cy="136" r="3.5" fill="#0B2540"/>
+          <path d="M193 118l7-10h22l7 10" stroke="rgba(11,37,64,.5)" stroke-width="1.4"/>
+          <path d="M212 120v13" stroke="rgba(11,37,64,.5)" stroke-width="1.4"/>
+          <path d="M216 124h6" stroke="rgba(11,37,64,.5)" stroke-width="1.4"/>
+          <path d="M206 122l-5 8h4l-2 6 6-8h-4l1-6z" fill="#FFC648" stroke="#E5A93C" stroke-width=".8"/>
+          <path d="M16 148h232" stroke="rgba(11,37,64,.35)" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="svc-body">
+        <span class="svc-num">03</span>
+        <h3>Custom EV Charging Solutions</h3>
+        <p class="svc-tagline">Fill up on sunshine, not units.</p>
+        <p class="svc-desc">Electric vehicles are arriving fast — and charging one on grid power shows up on your bill. We design parallel inverter configurations dedicated to EV charging, so your car runs on your roof instead of the meter.</p>
+        <ul class="svc-points">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 7"/></svg>Parallel inverters for high-power charging</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 7"/></svg>Solar-first charging logic</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 7"/></svg>A system that grows as your needs do</li>
+        </ul>
+        <div class="svc-chips"><span>Parallel inverters</span><span>EV-ready design</span><span>Smart load management</span></div>
+        <a class="svc-link" href="#contact">Get a quote for this
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ======= PROCESS ======= -->
+<section id="process">
+  <div class="container">
+    <div class="sec-head center" data-reveal>
+      <p class="kicker">How it works</p>
+      <h2>Sunlight to <em>switch-on</em>, step by step.</h2>
+    </div>
+    <div class="steps-wrap" data-reveal style="--d:.1s">
+      <div class="flowline" aria-hidden="true"></div>
+      <ol class="steps">
+        <li class="step"><span class="step-num">01</span><div><h3>Site visit</h3><p>A free visit from Warakapola or Gampaha. We study your roof and your loads.</p></div></li>
+        <li class="step"><span class="step-num">02</span><div><h3>Custom design</h3><p>Panel &amp; inverter spec matched to your home — to the watt.</p></div></li>
+        <li class="step"><span class="step-num">03</span><div><h3>Installation</h3><p>Safe, tidy, tested — mounted and commissioned by our own team.</p></div></li>
+        <li class="step"><span class="step-num">04</span><div><h3>Aftercare</h3><p>Servicing and support from people up the road, not overseas.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CALCULATOR ======= -->
+<section id="calculator">
+  <div class="container">
+    <div class="sec-head center" data-reveal>
+      <p class="kicker">Free estimate</p>
+      <h2>What could solar save <em>you</em>?</h2>
+      <p class="lead">Slide your average monthly electricity bill and see the system we'd recommend.</p>
+    </div>
+    <div class="calc-wrap" data-reveal style="--d:.1s">
+      <div class="wash wash-green" aria-hidden="true"></div>
+      <div class="wash wash-yellow" aria-hidden="true"></div>
+      <div class="calc-anno anno-1" aria-hidden="true"><i></i>Avg. tariff ≈ Rs. 42 / kWh</div>
+      <div class="calc-anno anno-2" aria-hidden="true"><i></i>Peak sun ≈ 4.3 hrs / day</div>
+      <div class="calc">
+        <div class="calc-left">
+          <label for="bill">Your average monthly electricity bill</label>
+          <div class="bill-read">
+            <strong>Rs. <span id="billVal">8,000</span></strong>
+            <span class="units">≈ <b id="billUnits">190</b> units (kWh) per month</span>
+          </div>
+          <input type="range" id="bill" min="2000" max="30000" step="500" value="8000" style="--p:21.4%" aria-label="Average monthly electricity bill in rupees">
+          <div class="range-marks"><span>Rs. 2,000</span><span>Rs. 15,000</span><span>Rs. 30,000</span></div>
+        </div>
+        <div class="calc-right">
+          <p class="mini-label" style="margin-bottom:8px">Your estimate</p>
+          <div class="res-row"><span>Recommended system size</span><strong><b id="rKwp">1.5</b><i>kWp</i></strong></div>
+          <div class="res-row"><span>Panels (450 W, Jinko-class)</span><strong><b id="rPanels">4</b><i>panels</i></strong></div>
+          <div class="res-row"><span>Monthly generation</span><strong>≈ <b id="rGen">194</b><i>kWh</i></strong></div>
+          <div class="res-row res-hl"><span>Monthly saving</span><strong>≈ <b id="rSave">7,360</b><i>Rs.</i></strong></div>
+          <div class="res-total"><span>Possible saving over 25 years</span><strong>Rs. <b id="r25">2,208,000</b></strong></div>
+          <a class="btn btn-primary btn-block" href="#contact">Get this sized for my roof
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+          </a>
+          <p class="calc-note">Back-of-envelope maths: ≈ 4.3 peak sun-hours per day, a blended tariff of Rs. 42/kWh and 450 W panels. Your real numbers depend on roof direction, shading and tariff tier — that's what the free site visit is for.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CONTACT ======= -->
+<section class="contact" id="contact">
+  <div class="wash wash-green" aria-hidden="true"></div>
+  <div class="container">
+    <div class="contact-grid">
+      <div data-reveal>
+        <p class="kicker">Get a free quote</p>
+        <div class="sec-head" style="margin-bottom:0">
+          <h2>Talk to the person who'll <em>climb your roof</em>.</h2>
+          <p class="lead">No call centres, no sales scripts. Deal directly with the owner from day one — call now, or send a few details and we'll arrange a free site visit.</p>
+        </div>
+        <div class="c-rows">
+          <a class="c-row c-phone" href="tel:+94716118031">
+            <span class="c-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <span><small>Call or WhatsApp</small><strong>071 611 8031</strong></span>
+            <span class="c-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <div class="c-row">
+            <span class="c-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span><small>Main branch</small><strong>Warakapola, Sri Lanka</strong></span>
+          </div>
+          <div class="c-row">
+            <span class="c-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span><small>Second branch</small><strong>Gampaha, Sri Lanka</strong></span>
+          </div>
+          <div class="c-row">
+            <span class="c-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
+            <span><small>The owner</small><strong>D. P. A. K. Pathirana</strong></span>
+          </div>
+        </div>
+        <div class="c-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4.5"/></svg>
+          <span><strong>An independent local business since 2019</strong> — no head office, no middlemen. You deal with us, start to finish.</span>
+        </div>
+        <a class="btn btn-primary" href="tel:+94716118031">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call 071 611 8031
+        </a>
+      </div>
+
+      <form class="quote-form" id="quoteForm" novalidate data-reveal style="--d:.12s">
+        <h3>Request a free quote</h3>
+        <p class="form-sub">Fill this in — it opens WhatsApp with your details ready to send.</p>
+        <div class="field">
+          <label for="fName">Full name</label>
+          <input id="fName" name="name" type="text" placeholder="e.g. Nimal Perera" autocomplete="name">
+          <em class="err">Please tell us your name.</em>
+        </div>
+        <div class="frow">
+          <div class="field">
+            <label for="fPhone">Phone</label>
+            <input id="fPhone" name="phone" type="tel" placeholder="07X XXX XXXX" autocomplete="tel">
+            <em class="err">Please enter a valid phone number.</em>
+          </div>
+          <div class="field">
+            <label for="fBranch">Nearest branch</label>
+            <div class="select-wrap">
+              <select id="fBranch" name="branch">
+                <option>Warakapola</option>
+                <option>Gampaha</option>
+              </select>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fInterest">I'm interested in</label>
+          <div class="select-wrap">
+            <select id="fInterest" name="interest">
+              <option>Hybrid or off-grid system</option>
+              <option>Professional installation</option>
+              <option>EV charging setup</option>
+              <option>Not sure — advise me</option>
+            </select>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fMsg">Anything we should know? <small>(optional)</small></label>
+          <textarea id="fMsg" name="message" placeholder="Roof type, EV plans, blackout issues…"></textarea>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 20l1-5.6A8.4 8.4 0 0 1 3 11.5 8.5 8.5 0 1 1 21 11.5z"/></svg>
+          Send via WhatsApp
+        </button>
+        <p class="form-note">Opens WhatsApp with your message pre-filled — no accounts, no spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ======= FOOTER ======= -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="f-brand">
+      <a class="brand" href="#top" aria-label="Anurex Solar — home">
+        <svg class="brand-mark" viewBox="0 0 44 44" fill="none" aria-hidden="true" style="filter:none">
+          <rect width="44" height="44" rx="12" fill="rgba(255,255,255,.1)"/>
+          <path d="M9 27a13 13 0 0 1 26 0Z" fill="#FFC648"/>
+          <g stroke="#FFC648" stroke-width="2.6" stroke-linecap="round"><path d="M22 8.5V3.5"/><path d="M31.5 12.5 35 9"/><path d="M12.5 12.5 9 9"/></g>
+          <g stroke="#1FA55C" stroke-width="2.8" stroke-linecap="round"><path d="M6 32.5h32"/><path d="M11 38h22"/></g>
+        </svg>
+        <span class="brand-text"><strong>Anurex <span>Solar</span></strong><small>By Anura Hardware</small></span>
+      </a>
+      <p>An independent solar installation company with our main branch in Warakapola and a second branch in Gampaha, serving Sri Lanka since 2019.</p>
+    </div>
+    <div class="f-col">
+      <p class="f-head">Explore</p>
+      <a href="#about">About us</a>
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#calculator">Savings calculator</a>
+      <a href="#contact">Get a quote</a>
+    </div>
+    <div class="f-col">
+      <p class="f-head">Services</p>
+      <a href="#services">Hybrid &amp; off-grid systems</a>
+      <a href="#services">Professional installation</a>
+      <a href="#services">EV charging solutions</a>
+      <a href="#contact">Free site visits</a>
+    </div>
+    <!-- Tip: add full street addresses to the two spans below when you're ready -->
+    <div class="f-col">
+      <p class="f-head">Contact</p>
+      <a class="f-phone" href="tel:+94716118031">071 611 8031</a>
+      <span><strong>Warakapola</strong> — Main Branch, Sri Lanka</span>
+      <span><strong>Gampaha</strong> — Branch, Sri Lanka</span>
+      <span>Owner: D. P. A. K. Pathirana</span>
+    </div>
+  </div>
+  <div class="container footer-bar">
+    <span>© <b id="year">2025</b> Anurex Solar · By Anura Hardware — All rights reserved.</span>
+    <span>Independent local business · Est. 2019 · Made in Sri Lanka, powered by sunlight.</span>
+  </div>
+</footer>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+  const $  = (s, c=document) => c.querySelector(s);
+  const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+
+  /* ---- Sticky nav state ---- */
+  const nav = $('#navbar');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+  onScroll();
+  addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Mobile menu ---- */
+  const toggle = $('#navToggle');
+  const closeMenu = () => { document.body.classList.remove('nav-open'); toggle.setAttribute('aria-expanded','false'); };
+  toggle.addEventListener('click', () => {
+    const open = document.body.classList.toggle('nav-open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  $$('#mobileMenu a').forEach(a => a.addEventListener('click', closeMenu));
+  addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  addEventListener('resize', () => { if (innerWidth > 880) closeMenu(); });
+
+  /* ---- Active section highlight ---- */
+  const secObs = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const id = '#' + en.target.id;
+      $$('.nav-links a').forEach(l => l.classList.toggle('active', l.getAttribute('href') === id));
+    });
+  }, {rootMargin:'-30% 0px -55% 0px'});
+  $$('main section[id]').forEach(s => secObs.observe(s));
+
+  /* ---- Scroll reveal ---- */
+  const revObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in-view'); revObs.unobserve(e.target); }
+  }), {threshold:.12});
+  $$('[data-reveal]').forEach(el => revObs.observe(el));
+
+  /* ---- Savings calculator (live, animated) ---- */
+  const bill = $('#bill');
+  const out = {
+    val:$('#billVal'), units:$('#billUnits'), kwp:$('#rKwp'),
+    panels:$('#rPanels'), gen:$('#rGen'), save:$('#rSave'), y25:$('#r25')
+  };
+  const TARIFF = 42, SUN_HRS = 4.3, PANEL_W = 450;
+
+  function animate(el, to, decimals = 0){
+    const from = el._v || 0, t0 = performance.now(), dur = 420;
+    cancelAnimationFrame(el._raf);
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur);
+      const v = from + (to - from) * (1 - Math.pow(1 - k, 3));   // ease-out cubic
+      el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+      el._v = v;
+      if (k < 1) el._raf = requestAnimationFrame(step);
+    };
+    el._raf = requestAnimationFrame(step);
+  }
+  function update(){
+    const b = +bill.value;
+    out.val.textContent = b.toLocaleString('en-US');
+    const units  = b / TARIFF;
+    const kwp    = Math.max(1, Math.round(units / (30 * SUN_HRS) * 2) / 2);  // nearest 0.5, min 1 kWp
+    const panels = Math.ceil(kwp * 1000 / PANEL_W);
+    const gen    = kwp * SUN_HRS * 30;
+    const save   = Math.min(gen * TARIFF, b * 0.92);
+    animate(out.units, units);
+    animate(out.kwp, kwp, 1);
+    animate(out.panels, panels);
+    animate(out.gen, gen);
+    animate(out.save, save);
+    animate(out.y25, save * 300);
+    bill.style.setProperty('--p', ((b - bill.min) / (bill.max - bill.min) * 100) + '%');
+  }
+  bill.addEventListener('input', update);
+  const calcObs = new IntersectionObserver(es => {
+    if (es[0].isIntersecting) { update(); calcObs.disconnect(); }
+  }, {threshold:.3});
+  calcObs.observe($('#calculator'));
+
+  /* ---- Toasts ---- */
+  const toastWrap = $('#toastWrap');
+  function toast(msg, ok = true){
+    const t = document.createElement('div');
+    t.className = 'toast' + (ok ? '' : ' warn');
+    const ic = document.createElement('span');
+    ic.className = 'toast-ic';
+    ic.innerHTML = ok
+      ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 7"/></svg>'
+      : '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v6M12 17h.01"/><path d="M10.3 3.9 2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>';
+    const p = document.createElement('p');
+    p.textContent = msg;
+    t.append(ic, p);
+    toastWrap.appendChild(t);
+    requestAnimationFrame(() => t.classList.add('show'));
+    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 450); }, 4200);
+  }
+
+  /* ---- Quote form → WhatsApp ---- */
+  const form = $('#quoteForm');
+  const setErr = (input, bad) => input.closest('.field').classList.toggle('invalid', bad);
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const F = form.elements;
+    const badName  = F['name'].value.trim().length < 2;
+    const badPhone = !/^[0-9+\-\s]{9,}$/.test(F['phone'].value.trim());
+    setErr(F['name'], badName);
+    setErr(F['phone'], badPhone);
+    if (badName || badPhone) {
+      toast('Please fill in the highlighted fields.', false);
+      (badName ? F['name'] : F['phone']).focus();
+      return;
+    }
+    const text =
+      `Hello Anurex Solar! I'd like a free quote.\n\n` +
+      `Name: ${F['name'].value.trim()}\n` +
+      `Phone: ${F['phone'].value.trim()}\n` +
+      `Nearest branch: ${F['branch'].value}\n` +
+      `Interested in: ${F['interest'].value}\n` +
+      `Notes: ${F['message'].value.trim() || '—'}`;
+    window.open('https://wa.me/94716118031?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    toast('Opening WhatsApp with your details — see you there!');
+    form.reset();
+  });
+  $$('input, select, textarea', form).forEach(el =>
+    el.addEventListener('input', () => setErr(el, false)));
+
+  /* ---- Hero parallax (pointer devices only) ---- */
+  if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const hero = $('#top'), scene = $('.scene'), chips = $('.chips');
+    if (scene && chips) {
+      let tx = 0, ty = 0, cx = 0, cy = 0;
+      hero.addEventListener('mousemove', e => {
+        const r = hero.getBoundingClientRect();
+        tx = (e.clientX - r.left) / r.width - .5;
+        ty = (e.clientY - r.top) / r.height - .5;
+      });
+      hero.addEventListener('mouseleave', () => { tx = 0; ty = 0; });
+      (function loop(){
+        cx += (tx - cx) * .055;
+        cy += (ty - cy) * .055;
+        scene.style.transform = `translate3d(${(cx*14).toFixed(2)}px, ${(cy*10).toFixed(2)}px, 0)`;
+        chips.style.transform = `translate3d(${(cx*-9).toFixed(2)}px, ${(cy*-7).toFixed(2)}px, 0)`;
+        requestAnimationFrame(loop);
+      })();
+    }
+  }
+
+  /* ---- Footer year ---- */
+  $('#year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
